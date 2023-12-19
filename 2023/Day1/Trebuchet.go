@@ -6,20 +6,24 @@ import (
 	"os"
 )
 
-func calibration_value(text []uint8) int {
-	keyval := map[int]int{}
-	for i := 0; i < 9; i++ {
-		keyval[48+i] = i
-	}
-	keyval[10] = -1
-}
-
-func main() {
-	txt, err := os.ReadFile("doc.txt")
-	x := []rune("1")
+func read() string {
+	text, err := os.ReadFile("doc.txt")
 	if err != nil {
 		log.Fatal(err)
 	}
-	fmt.Println(txt)
-	fmt.Printf("%T, %d\n", x, x)
+	return string(text)
+}
+
+func sum_digits(s string) int {
+	digits := map[uint8]int{}
+	for i := 0; i <= 9; i++ {
+		digits['0'+uint8(i)] = i
+	}
+	fmt.Println(digits)
+	fmt.Println(digits['8'])
+	return 0
+}
+
+func main() {
+	sum_digits("banan")
 }
