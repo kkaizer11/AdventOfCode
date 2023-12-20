@@ -14,16 +14,16 @@ func read() string {
 	return string(text)
 }
 
-func sum_digits(s string) int {
-	digits := map[uint8]int{}
-	for i := 0; i <= 9; i++ {
-		digits['0'+uint8(i)] = i
+func str_is_digit(c uint8) bool {
+	if c >= '0' && c <= '9' {
+		return true
 	}
-	fmt.Println(digits)
-	fmt.Println(digits['8'])
-	return 0
+	return false
 }
 
 func main() {
-	sum_digits("banan")
+	fmt.Println(str_is_digit('N'))
+	fmt.Println(str_is_digit('0'))
+	fmt.Println(str_is_digit('9'))
+	fmt.Println(str_is_digit('5'))
 }
