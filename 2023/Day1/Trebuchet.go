@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"log"
 	"os"
 )
@@ -21,9 +20,9 @@ func str_is_digit(c uint8) bool {
 	return false
 }
 
-func main() {
-	fmt.Println(str_is_digit('N'))
-	fmt.Println(str_is_digit('0'))
-	fmt.Println(str_is_digit('9'))
-	fmt.Println(str_is_digit('5'))
+func is_line_break(c uint8) bool {
+	if c == '\n' {
+		return true
+	}
+	return false
 }
