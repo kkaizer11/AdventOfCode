@@ -1,12 +1,14 @@
 package main
 
 import (
+	"fmt"
 	"log"
 	"os"
+	"strconv"
 )
 
 func read() string {
-	text, err := os.ReadFile("doc.txt")
+	text, err := os.ReadFile("input.txt")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -35,10 +37,10 @@ func two_digits(s string) string {
 		}
 	}
 	// TODO: funçao está bugada
-	if len(num_str) >= 1 {
-		return num_str
+	if len(num_str) == 0 {
+		return "0"
 	}
-	return string(num_str[0] + num_str[len(num_str)-1])
+	return string(string(num_str[0]) + string(num_str[len(num_str)-1]))
 }
 
 func gnl(s string) []string {
@@ -50,6 +52,23 @@ func gnl(s string) []string {
 		if is_line_break(s[i]) {
 			result = append(result, two_digits(s[bp:i]))
 			bp = i + 1
+		}
+	}
+	return result
+}
+
+func sum_all(values []string) int {
+	result := 0
+	for _, num := range values {
+		if len(num) == 0 {
+			continue
+		} else {
+			num_int, e := strconv.Atoi(num)
+			if e != nil {
+				fmt.Printf(num)
+				log.Fatal(e)
+			}
+			result += num_int
 		}
 	}
 	return result

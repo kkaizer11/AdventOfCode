@@ -5,6 +5,6 @@ import "fmt"
 func main() {
 	txt := read()
 	txt_lines := gnl(txt)
-	fmt.Println(txt_lines)
-	fmt.Println(len(txt_lines))
+	sum := sum_all(txt_lines)
+	fmt.Println(sum)
 }
