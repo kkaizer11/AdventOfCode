@@ -10,5 +10,5 @@ func main() {
 		size++
 	}
 	fmt.Println(size)
-	fmt.Println(txt[size])
+	fmt.Println(txt[10])
 }
