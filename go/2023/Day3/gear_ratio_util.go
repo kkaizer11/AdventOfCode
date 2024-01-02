@@ -19,3 +19,12 @@ func is_line_break(c uint8) bool {
 	}
 	return false
 }
+
+func line_len() int {
+	txt := read()
+	size := 0
+	for is_line_break(txt[size]) == false {
+		size++
+	}
+	return size - 1
+}
