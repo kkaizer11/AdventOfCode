@@ -20,11 +20,17 @@ func is_line_break(c uint8) bool {
 	return false
 }
 
-func line_len() int {
+func line_len() (int, int) {
 	txt := read()
 	size := 0
+	lines := 0
 	for is_line_break(txt[size]) == false {
 		size++
 	}
-	return size - 1
+	for _, chr := range txt {
+		if is_line_break(uint8(chr)) == true {
+			lines++
+		}
+	}
+	return size - 1, lines - 1
 }
