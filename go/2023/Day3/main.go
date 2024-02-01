@@ -2,6 +2,7 @@ package main
 
 import "fmt"
 
+// pouca coisa feita mas eu acredito
 func main() {
 	txt := read()
 	line_size, line_cout := line_len()
